@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body class="dark-bg">
+    <div class="navbar-wrapper dark">
+      <div class="navbar">
+        <h1>Where in the world?</h1>
+        <div class="mode">
+          <i class="fas fa-moon"></i>
+          <p>Dark Mode</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="search-and-filter">
+        <div class="row">
+          <div class="search dark">
+            <i class="fas fa-search"> </i>
+            <input
+              type="search"
+              class="search-input dark"
+              placeholder="Search for a country.."
+            />
+          </div>
+          <div class="filter dark">
+            <select name="region" id="" class="filter-input dark">
+              <option class="option-dark" value="all">Filter by Region</option>
+              <option class="option-dark" value="Africa">Africa</option>
+              <option class="option-dark" value="America">America</option>
+              <option class="option-dark" value="Asia">Asia</option>
+              <option class="option-dark" value="Europe">Europe</option>
+              <option class="option-dark" value="Oceania">Oceania</option>
+            </select>
+            <i class="fas fa-chevron-right"></i>
+          </div>
+        </div>
+      </div>
+      <div class="loader"></div>
+      <section class="cards"></section>
+    </div>
+    <div class="container2 dark">
+      <div class="loader"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
