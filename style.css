@@ -16,10 +16,10 @@
 .navbar div {
   margin: 20px;
 }
-.navbar-wrapper.dark {
+.dark .navbar-wrapper {
   background-color: hsl(209, 23%, 22%);
 }
-.navbar-wrapper.light {
+.light .navbar-wrapper{
   background-color: hsl(0, 0%, 100%);
 }
 .navbar h1 {
@@ -42,21 +42,21 @@
 .mode i {
   font-size: 12px;
 }
-.dark-bg {
-  background-color: hsl(207, 26%, 17%);
-}
-.light-bg {
-  background-color: hsl(0, 0%, 98%);
-}
 .dark {
   color: hsl(0, 15%, 94%);
 }
 .light {
   color: hsl(200, 15%, 8%);
 }
+.dark-bg {
+  background-color: hsl(207, 26%, 17%);
+}
+.light-bg {
+  background-color: hsl(0, 0%, 98%);
+}
 .search-and-filter .row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   max-width: 1350px;
   margin: 35px auto 15px auto;
@@ -67,21 +67,22 @@
   border-radius: 6px;
   margin-left: 35px;
 }
-.search-input.dark,
-.filter-input.dark {
+.dark .search-input,
+.dark .filter-input {
   background-color: hsl(209, 23%, 22%);
+  color: rgba(255, 255, 255, 0.822);
 }
-.search-input.light,
-.filter-input.light {
+.light .search-input,
+.light .filter-input {
   background-color: hsl(0, 0%, 100%);
 }
-.search.dark,
-.filter.dark {
+.dark .search
+{
   box-shadow: 1px 1px 10px rgba(27, 27, 27, 0.205);
   background-color: hsl(209, 23%, 22%);
 }
-.search.light,
-.filter.light {
+.light .search
+ {
   box-shadow: 1px 1px 10px hsl(0, 10%, 94%);
   background-color: hsl(0, 0%, 100%);
 }
@@ -98,7 +99,7 @@
 .search-input::-webkit-search-cancel-button {
   appearance: none;
 }
-.search-input.dark::placeholder {
+.dark .search-input::placeholder {
   color: hsl(0, 10%, 94%);
   font-size: 13px;
 }
@@ -115,16 +116,16 @@ select {
 }
 
 .filter {
-  padding: 15px;
-  border-radius: 6px;
   font-size: 12px;
   margin-right: 40px;
   margin-left: 40px;
+  cursor: pointer;
 }
 .filter-input {
   border: none;
   outline: none;
-  padding: 0 30px 0 6px;
+  padding: 15px 30px 15px 15px;
+  border-radius: 6px;
 }
 .cards {
   max-width: 1350px;
@@ -137,18 +138,18 @@ select {
   margin: 35px;
   border-radius: 6px;
 }
-.card.dark {
+.dark .card {
   box-shadow: 1px 1px 10px rgba(27, 27, 27, 0.205);
   background-color: hsl(209, 23%, 22%);
 }
-.card.light {
+.light .card {
   box-shadow: 1px 1px 10px hsl(0, 10%, 94%);
   background-color: hsl(0, 0%, 100%);
 }
-.card.light .info-value {
+.light .card .info-value {
   font-weight: 600;
 }
-.card.light .info-heading {
+.light .card .info-heading {
   font-weight: 700;
 }
 .card img {
@@ -189,12 +190,12 @@ select {
 .back-btn i {
   padding: 0 6px 0 0;
 }
-.back-btn.dark {
+.dark .back-btn {
   background-color: hsl(209, 23%, 22%);
   color: #fff;
   box-shadow: 1px 1px 15px rgba(27, 27, 27, 0.24);
 }
-.back-btn.light {
+.light .back-btn {
   background-color: hsl(0, 0%, 100%);
   color: hsl(200, 15%, 8%);
   box-shadow: 1px 1px 10px hsl(0, 10%, 94%);
@@ -254,12 +255,12 @@ select {
   display: inline-block;
   text-align: center;
 }
-.box.dark {
+.dark .box {
   background-color: hsl(209, 23%, 22%);
   color: hsla(0, 0%, 98%, 0.808);
   box-shadow: 1px 1px 15px rgba(27, 27, 27, 0.24);
 }
-.box.light {
+.light .box {
   background-color: hsl(0, 0%, 100%);
   color: hsl(200, 15%, 8%);
   box-shadow: 1px 1px 10px hsl(0, 10%, 94%);
@@ -284,6 +285,54 @@ select {
   animation: spinner 1.5s linear infinite;
   transform: translate3d(-50%, -50%, 0);
   display: none;
+}
+.error-msg{
+  color:lightgray;
+  padding:15px;
+  font-size: 16px;
+  display: none;
+  text-align: center;
+}
+.filter-input{
+  padding-right: 0;
+}
+.filter-input i{
+  margin-left: 35px;
+  padding-right: 10px;
+}
+.options{
+  list-style-type: none;
+  position: absolute;
+  width:153.375px;
+  margin-top: 4px;
+  background-color: hsl(209, 23%, 22%);
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.light .options{
+  background-color: hsl(0, 0%, 100%);
+ 
+  box-shadow: 1px 1px 10px hsl(0, 10%, 94%);
+}
+.options li{
+  padding:3px 0;
+}
+.options li:hover{
+  font-weight: 700;
+}
+
+.display{
+  display: none;
+}
+.light .card{
+  text-decoration: none;
+  color:hsl(200, 15%, 8%);
+}
+.dark .card {
+  text-decoration: none;
+  color:hsla(0, 0%, 100%, 0.788);
 }
 @media (max-width: 1150px) {
   .card {
